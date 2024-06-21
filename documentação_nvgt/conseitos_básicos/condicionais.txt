@@ -1,0 +1,81 @@
+##Condicionais e a condição if.
+A condição if é uma das instruções mais úteis. Ela está presente em quase todas as linguagens de programação que estão em uso atualmente.
+Suponhamos que queremos executar algum código, mas apenas se algo específico for verdadeiro, a condição if é a  que utilizamos.. Vejamos um exemplo completo:
+
+#include "speech.nvgt"
+void main(){
+    int numero_randomico = random(1, 6);
+    if(numero_randomico == 1) {
+        speak("Uau! Você tem " + numero_randomico + "Isso é muita sorte!");
+    }
+    else if(numero_randomico < 4 ) {
+        speak("Você tem " + numero_randomico + " Isso é muita sorte, mas tente marcar um na próxima vez!");
+    }
+    else {
+        speak("Boa sorte na próxima vez " + numero_randomico + ".");
+    }
+}
+
+Este pequeno jogo é simples, lance um dado, e veja o resultado que você pode obter.
+São nos apresentadas três condições: obtemos um, (o lançamento de sorte), entre dois ou três, (o segundo lançamento de sorte) entre quatro e seis, significando que perdemos o jogo.
+Podemos elaborar essas três opções, usando as condições "if", "else if" e "else". Elas funcionam da seguinte forma:
+if(condição)
+{ //Abertura de bloco.
+//mensagem ou condição que desejamos estabelecer.
+} //fechamento de bloco.
+else if(condição) 
+{ //Abertura de bloco.
+//Mensagem ou condição que desejamos estabelecer.
+} //Fechamento de bloco.
+else 
+{ //Abertura de bloco.
+//Mensagem ou condição que desejamos estabelecer.
+} //Fechamento de bloco.
+A palavra if significa se, se algo for verdadeiro então estabelecemos essa condição.
+A palavra else if significa se não si, caso a condição do if não seja correspondida.
+A palavra else significa se não. Caso nenhuma condição seja correspondida.
+As condições são diferentes das instruções normais que finalizamos com ponto e vírgula, pois se tratam de blocos, assim como nas funções, que abrimos chaves e fechamos chaves.
+Mas o que quer dizer condições?
+As condições nada mais são, valores que retornam verdadeiro ou falço. Pode ser uma variável booleana, ou o resultado de operadores de comparação.
+Em NVGt, há 6 operadores de comparação, cada um dos quais recebe verdadeiro ou falço, dependendo do que foi estabelecido.
+
+Conhecendo os operadores de comparação:
+Os operadores de comparação nada mais são, quando queremos comparar algo em um mesmo if ou else if.
+== Os dois cinais de igual verificam se dois valores são iguais.
+!= Verificam Se dois valores ou condições são diferentes.
+<= Verifica se determinada condição é maior ou igual a determinado valor estabelecido.
+>= Verificam se a condição estabelecida é maior ou igual ao valor desejado.
+< O cinal de menor verifica se uma condição é menor que o valor desejado.
+> O cinal de maior verifica se a condição é maior que o valor desejado.
+
+Também podemos contar com os operadores lógicos, já vimos anteriormente quando falamos sobre booleanos.
+&& Os dois cinais de & representam e, em inglês and.
+|| Os dois cinais de barra vertical representam ou, em inglês or.
+^^ Os dois cinais de circunflexo retornam verdadeiros se um dos booleanos, for verdadeiro.
+! O cinal de esclamação serve para negar, em inglês not.
+Usar os operadores lógicos e de comparação, é como estabelecer condições dentro dos ifs, mas lembre-se que os booleanos podem ser usados diretamente.
+Isso é muita informação de uma vez só, então segue um exemplo de código para demonstrar:
+
+#include "speech.nvgt"
+void main(){
+    int seu_nivel = 5;
+    int nivel_do_monstro=10;
+    int sua_xp=50;
+    bool vivo=true;
+    if(vivo)
+        speak("Você está vivo!");
+    if(nivel_do_monstro<=seu_nivel){
+        speak("Você consegue matar o monstro!");
+    }
+    else{
+        speak("O monstro tem um nível mais alto que o seu, então ele irá te matar!");
+        vivo=false;
+    }
+    if(!vivo)
+        speak("Você não está mais vivo!");
+    if(seu_nivel*10==sua_xp)
+        speak("Seu nível é igual a um décimo de sua experiência.");
+}   
+
+Este exemplo de código demonstra uma diferença importante que foi mensionada anteriormente: uma instrução if que usa operadores lógicos e de comparação, ao em véz de fazer um bloco de if para comparar.
+A onde um bloco pode ser usado, geralmente uma única condição também pode ser estabelecida; Com eceção das funções, que devem ser utilizados blocos, seja eles de uma única linha apenas.

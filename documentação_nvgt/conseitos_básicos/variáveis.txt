@@ -1,0 +1,200 @@
+##Variáveis.
+Se você conhece variáveis, então terá em mente um conceito semelhante em desenvolvimento. Elas são locais para armazenar dados.
+Algumas coisas no NVGT são variáveis: funções, variáveis comuns, classes e muito mais.
+Nessa parte, aprenderemos a como criar algumas variáveis simples, e como alterar seu valor.
+
+Inteiros (ints), e inteiros sem sinal (uints).
+Em NVGT, temos dois tipos principais de números: inteiros (ints), e números com um ponto decimal (floats).
+O mais fácil de entender são os números inteiros, também conhecido como (ints), aprenderemos sobre ele primeiro e depois passaremos aos números com decimais.
+Segue alguns exemplos de declaração dos dois tipos de inteiros:
+int x = 3;
+x -=3; //Significa que estamos reatribuindo valor a variável.
+uint y=3;
+y -=3; //O não!
+Como você pode ver, usamos ambos os tipos de inteiros. Um é chamado de int, mas o outro é chamado de uint, o que significa uint? Você talvez já tenha adivinhado!
+Falaremos sobre os uints logo. E se você não deseja saber sobre binários agora, basta você saber que inteiros sem cinal sacrificam a capacidade de armazenar valores negativos, em troca de um alcanse de valores positivos de números em dobro +1.
+Primeiro vamos verificar passo a passo da nossa declaração de int:
+1. int é o tipo de nossa variável (inteiro).
+2. x e y são os identificadores de nossas variáveis, ou seja são os nomes delas.
+3. O cinal de igual é o valor de atribuição. A primeira vez que atribuímos um valor as nossas variáveis, significa que estamos inicializando.
+4. Após o igual, armazenamos um valor em nossa variável. Então o ponto e vírgula indica que estamos finalizando nossa declaração.
+Você perceberá que a primeira referência de uma variável  obrigatoriamente precisa ser colocada seu tipo. Isso acontece porque é a primeira declaração de nossa variável, enquanto a segunda linha estamos reatribuindo um valor para ela.
+Você também pode declarar, o que chamamos de variáveis globais, um exemplo prático para demonstração:
+
+int emails_não_lidos = 20;
+void main() {
+    alert("Importante,", "Você tem " +emails_não_lidos + "não lidos!");
+}
+
+Como você pode observar, apesar da variável global não ter cido declarada dentro da função (ou de seu bloco), ainda podemos usá-la. Isso acontece, porque a variável não é declarada em nenhuma função, portanto, ela pode ser usada em todas as funções de seu software.
+O altor deste manual pessoalmente, não recomenda muito o uso de variáveis globais. Uma maneira mais prática de usar variáveisem muitas funcionalidades diferentes,  que será falado posteriormente. A eceção são constantes (consts), que também serão abordadas em breve.
+Para criar a mensagem, foi utilizado o operador de concatenação de strings, para juntar uma string, uma variável e outra string. Este contexto, será abordado com mais detalhes na ceção strings.
+Como podemos observar, dentro de uma função (mas não fora), variáveis podem ser alteradas, ou reatribuídas. Você deve ter notado, que mudar o valor de uma variável em relação a ela mesma (Como dar ao jogador algum dinheiro ou pontos) é um efeito colateral útil, já que você pode simplesmente referenciar uma variável ao alterar seu valor assim:
+
+inte nivel = 1;
+nivel = nivel + 1;
+
+Mas existe uma forma muito mais simples e legível de fazer isso, que economiza tempo (e reduz possíveis erros de dijitação!).
+Se você deseja mudar uma variável em relação a ela mesma desta forma, use o que chamamos de atribuição composta.
+É feita a combinação de um operador, como uma operação matemática, ou concatenação de strings.
+Por exemplo, poderíamos refazer nosso código anterior usando atribuição composta:
+
+int nivel = 2;
+nivel += 1;
+
+Como você pode observar, é muito mais prático!
+Segue um exemplo completo para consolidarmos o que aprendemos. Você pode copiar e colar em um script NVGT, e fazer a execução. Também será mostrado inclusões e comentários novamente!
+
+#include "speech.nvgt"
+int g = 3; // Variável global.
+void main(){
+    /*
+    Este programa demonstra números inteiros em NVGT, declarando um (variável a) e realizando diversas operações matemáticas.
+    Após a realização de cada operação, o valor de a será falado.
+    */
+    int a = 0; // essa será a variável que será usada.
+    speak("Um é agora  " + a);
+    a+=2;
+    speak("Depois de adicionar 2, a agora é " + a);
+    a*=6;
+    speak("Depois de multiplicar por 6, a agora é " + a);
+    a /=3;
+    speak("Depois de dividir por 3, a agora é " + a);
+    //Algo novo aqui!
+    a -= g;
+    speak("Depois de subtrair por g, a é agora " + a);
+}
+
+##Binários: binário 1100101 (ou 101)
+Para entender inteiros com sinal e sem sinal, precisamos primeiro compreender o binário. Também conhecido como base 2, é um tipo de sistema baseado em 0s e 1s. É mais conhecido por aparecer em terminais em filmes sobre hackers, mas é essencial entender como desenvolvedor. Vamos explorar.
+A versão sem sinal do inteiro binário é mais fácil de explicar, então iniciaremos por ela. Em termos de ordem de bytes, assumiremos big-endian, que é provavelmente o que você estará usando. Little-endian é apenas big-endian invertido, o que, como você descobrirá, é fácil de entender.
+Observe uma sequência de bits. Na base 2, podemos deduzir que o valor máximo possível é 2 bits - 1. Os inteiros no NVGT são de 32 bits, embora ele também forneça suporte aos  tipos de  int64 e uint64, se preciso.
+O tipo de inteiro sem sinal (uint) no NVGT pode armazenar um valor máximo de 4,294 bilhões. Este é um número relativamente grande e adequado para a maioria dos casos. O tipo de inteiro sem sinal de 64 bits pode armazenar um valor de até 18,446 quintilhões, que corresponde a mais de dois bilhões de vezes a população mundial, e mais de 1000 vezes a quantidade de dinheiro em circulação em toda economia, em centavos de dólar.
+O primeiro bit à esquerda tem um valor correspondente de 2 elevado à potência de n-1, onde n é o número de bits.
+Se o bit estiver configurado em 0, não adicionamos valor ao total elevado a base 10. Se estiver configurado para 1, adicionamos seu valor.
+Da esquerda para a direita, cada bit vale metade do bit anterior. Vamos dar um exemplo com 8 bits, pois é mais fácil de visualizar do que 32 bits.
+Observe esta sequência de bits: 01100101
+O bit mais à esquerda nesta sequência vale 128, que é o valor de 2^(8-1).
+Mas está configurado para 0, então não adicionamos nada.
+O próximo bit à direita vale 64 e está configurado para 1. Portanto, adicionamos 64.
+O próximo bit vale 32 e também está configurado para 1, somando 32, resultando em 96.
+Os próximos dois bits valem 16 e 8, mas ambos estão configurados para 0, então os ignoramos.
+O próximo bit vale 4 e está configurado para 1. Adicionamos 4, resultando em 100.
+O próximo bit vale 2 e está configurado para 0, então o ignoramos. O último bit vale 1 e está configurado para 1. Adicionamos 1, resultando no total de 101.
+Isso é tudo o que você precisa saber sobre a representação binária sem sinal.
+
+##Variáveis de pontos flutuantes (pontos decimais).
+A principal diferença entre inteiros e números de pontos flutuantes, é que os floats podem armazenar valores com casas decimais, enquanto os ints se restrinjem exclusivamente a números inteiros. Embora apresentem algumas desvantagens, isso tornam os números com casas decimais, mais adequados para tarefas onde é necessário um alto nível de precisão, eles também, são úteis para trabalhar com números imprecisos, mas extremamente grandes.
+Existem dois tipos principais de números de casas decimais (floats), em NVGT: float e double.
+Float é uma variável de 32 bits (ou precisão simples) e double é uma variável de 64 bits que pode suportar o armazenamento de um número maior de casas decimais, e expoentes mais altos.
+Na maioria das vezes, você deve utilizar double, mas isso nem sempre é necessário, e de qualquer forma, muitas vezes não é uma boa opção.
+O funcionamento interno dos floats está além do escopo deste tutorial, mas basta nós sabermos que os computadores não pensam em valores decimais como a gente: o conseito de decimal não existe para eles.
+Ao em véz disto, eles utilizam uma representação binária ppadrão, chamada  IEEE754.
+Você não pode confiar que os floats armazenem um número perfeitamente. As vezes, o padrão IEEE754 não tem uma representação exata, e o seu número equivalente mais próximo deve ser usado.
+Para exemplificar isso, execute este script. O resultado deveria ser 1.21 mas não é.
+
+
+#include "speech.nvgt"
+void main(){
+    double resultado = 1.1 * 1.1;
+    screen_reader_speak(resultado, false); // convertendo implicitamente de double para string.
+}
+
+Como podemos observar, o valor está muito próximo, mais não exatamente corréto. Até usamos o tipo double, com 64 bits de precisão, mais não foi suficiente.
+Existem várias formas de contornar este problema, mas não precisamos nos preocupar com elas por agora. Então vamos nos aprofundar em outro tipo de variável, as strings!
+
+##Variáveis do tipo string.
+A forma de pensar em variáveis do tipo string é que elas armazenam texto, "Olá!", "Test" e "1" são strings, (Essa última é confusa) mas será explicado posteriormente.
+Na verdade, já vimos variáveis de string anteriormente, quando estávamos fazendo nosso programa de Olá mundo, usamos duas strings para fazer nossa caixa de diálogo, usamos como parâmetro um título e um texto, passando como argumentos na função alert.
+Agora, conhecendo as variáveis e suas referências, você pode observar que usamos "" nela, fizemos isso para indicar que ela é uma variável do tipo string, ou seja, ela armazenará texto.
+Se não tivéssemos colocado olá mundo entre aspas, o compilador certamente interpretaria como dois parâmetros de função, os textos entre aspas, os quais não existiriam no software.
+O nosso compilador NVGT, não teria gostado nada disso; Certamente isso teria gerado diversos erros em nossa resposta.
+No entanto, os textos nas variáveis do tipo string devem obrigatoriamente estar entre aspas, para permitir que o NVGT identifique, para ser mostrado ao usuário.
+é como se fôssemos entregar cartas: nós não sabemos o conteúdo que contém nela, e se soubéssemos, certamente nosso chefe precisaria falar com a gente! Apenas o destinatário sabe quais dados tem nela.
+Do mesmo modo, o NVGT colocará o texto entre aspas em strings, que podem então ser passadas para as funcionalidades, colocadas em variáveis, ou até mesmo serem feitas concatenações com outras variáveis e strings.
+Neste caso, foram atribuídas as variáveis de título e texto, parâmetros da função alert.
+Variáveis do tipo string, são criadas usando uma sintaxe semelhante as variáveis do tipo inteiro:
+
+string nome = "rory";
+
+Você também pode criar uma variável com várias palavras:
+
+string mensagem="Como vai seu dia?";
+
+Ou até mesmo variáveis com caractéres especiais:
+
+string mensagemDois = "Olá, e 你好 👋";
+
+Assim como as variáveis do tipo inteiro, as strings também possui operações que podem ser executadas nelas. De lonje o  mais comum é as concatenações.
+Concatenação é o procedimento de junção de strings. O Cinal de +, é usado para isso, e a atribuição += oferece suporte.
+Vejamos como funciona:
+
+string frase = "A rapoza veloz marrom.";
+mensagem += "Pula sobre o cachorro preguiçoso.";
+
+Para nos  familiarizarmos com a concatenação, será apresentado um exemplo completo: Copiamos o seguinte código em um script NVGT.
+
+#include "speech.nvgt"
+void main(){
+    int a = 1;
+    int b = 2;
+    string c = "1";
+    int d = 2;
+    string resultadoUm = a + b;
+    string resultadoDois = c + d;
+    speak(" o resultado de a + b é: " + resultadoUm);
+    speak("O resultado de c + d é: " + resultadoDois);
+}
+
+A saída deve ser da seguinte forma:
+aO resultado de a + b é 3.
+O resultado de c + d é 12.
+Era isso que esperávamos?
+O que está ocorrendo aqui é chamada de conversão implícita ou automática. No desenvolvimento, converter significa fazer a converção de algum valor inteiro (int) para texto (string).
+Quando calculamos o primeiro resultado, fazemos a soma de a+b, (1+2), e obtemos o valor 3, o que faz sentido.
+Mas quando calculamos o segundo resultado, o nvgt faz a converção automática de d, inteiro (int), em um texto (string), tornando em 2, para que seja feita a concatenação.
+Na sequência, ele ignora os dados internos e apenas adiciona. Então ao em véz de termos 1+2, nós teremos "1" + "2", que são dados juntos em uma string, formando o número "12".
+É por isso que strings são úteis: elas podem conter qualquer dado em formato testual, então, o significado destes dados podem ser interpretado por outra coisa. No nosso caso, ele é passado para nossos leitores de tela, e podemos lê-lo. Os sons, por si só não contém nenhuma informação semântica.
+
+##Variáveis booleanas (true e false).
+Levando a um conseito muito útil no desenvolvimento chamado condicionais, as variáveis booleanas são outro tipo de dados fundamentais no desenvolvimento, e geralmente estão presente de algum modo nas linguagens de programação.
+Nomeadas em omenagem ao matemático e lógico George Boole, as variáveis booleanas podem armazenar apenas dois valores possíveis: verdadeiro em inglês (true), e falço em inglês (false), ou 1 e 0, ligado ou desligado ou sim e não.
+Considere um interruptor de uma lâmpada, se ele estiver ligado, significa que é verdadeiro caso contrário, se estiver desligado, é falço.
+Eles são bem poderosos, e a muitas coisas que se pode fazer com eles, mas a grande maioria deles, não faz sentido sem uma condição estabelecida. Ainda assim, podemos exemplificar com um código básico, usando o operador lógico not (!).
+
+#include "speech.nvgt"
+void main(){
+    bool estado = true;
+    speak("O estado é: " + estado);
+    estado = !estado;
+    speak("O estado invertido, é: " + estado);
+}
+
+Esse código mostra como declarar um booleano: é bastante semelhante a outras variáveis. Ao contrário das strings, true e false não precisam estar entre aspas, apesar de não serem variáveis no sentido tradicional. Essas variáveis, na verdade são constantes, o que significa que não poderemos escrever acidentalmente seus valores; Se tentarmos, ocasionará em um erro.
+
+##Constantes (consts).
+Para nosso pequeno projeto, a última coisa que veremos são constantes.
+Variáveis constantes (const), são variáveis que nunca devem se alterar depois de serem atribuídas pela primeira vez. Isso deve ser realizado quando são inicializadas.
+Elas são muito úteis para evitar "Números mágicos" em nosso código: usar números diretamente não é uma boa prática!
+Vejamos o código asseguir:
+
+#include "speech.nvgt"
+void main(){
+    speak("Bem-vindo a loja de camping! Você precisa ter 30 dólares para comprar uma cadeira de praia.");
+}
+
+Parece ótimo, mas estamos usando esse valor em apenas uma parte de nosso código.
+Supomos que agora, que precisamos usar o  valor 30 em muitas partes: não apenas para informar ao usuário quanto custa comprar uma cadeira, mas também para a própria lógica de vendas.
+Isso é muito válido porque funciona, mas não é recomendado.
+Considere a seguinte situação: A inflação está tornando tudo mais caro hoje em dia, e se precisarmos alterar esse preço para 35 dólares no ano seguinte?
+A resposta a essa pergunta é que seria um pesadelo! Teríamos que percorrer nosso código linha a linha, alterando a atribuição 30 para 35. Mas poderíamos cometer um erro. Não seria muito melhor se mudarmos o valor apenas uma única vez?
+É aqui que as constantes (consts) entram em ação!
+Usando da seguinte forma, podemos reescrever nosso código assim:
+
+#include "speech.nvgt"
+const int preco = 30;
+void main() {
+    speak("Bem-vindo a loja de camping! Temos uma cadeira de praia por" + preco + "dólares.");
+}
+
+Muito bom! Agora podemos usar esse valor a onde queremos, e tudo o que precisamos fazer é atualizar o valor alterando a declaração dele.

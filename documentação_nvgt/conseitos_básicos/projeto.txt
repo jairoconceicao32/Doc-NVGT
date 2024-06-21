@@ -1,0 +1,7 @@
+##Projeto de aprendizado: Calculadora.
+
+Vamos fazer um software de calculadora com NVGT. Deveríamos ser capazes de calcular expressões matemáticas nele e obter os resultados. Em seguida, desenvolvemos nosso software e adicionamos mais recursos nele!
+Você encontrará muitos novos conselhos de programação, de uma só vez, então não se desanime se estiver perdido. Tudo será explicado!
+Neste tutorial, aprenderemos muitos dos conceitos fundamentais do NVGT, e também da programação! Tentarei tornar isso interessante, mas aprender o básico pode ser chato. Não é vergonhoso se você precisar tomar uma ou duas chácaras de café para ler isso.
+E depois de aprendermos o básico, criaremos várias versões de nosso projeto, cada uma melhor que a outra!
+Explicarei primeiramente os conceitos de NVGt e a programação que precisaremos compreender, usando alguns exemplos. Eles são chamados de pequenos códigos, e nem todos serão executados. Eles são apenas para demonstração.

@@ -1,0 +1,31 @@
+##Funções.
+As funções em NVGT, nada mais são que partes de código, que podem ser chamadas ou executadas por outras partes de um determinado código. Elas usam parâmetros ou (argumentos), como entrada, e geram um valor de retorno.
+Os valores de retorno, tem esse nome porque fornecem algumas informações, para a função de chamada, sem as quais o software não pode executar.
+Vamos usar como exemplo preparar um bolo: no procedimento de fazer um bolo simplesmente colocamos a massa no forno. O forno aça o bolo. Abrimos o forno e tiramos o bolo.
+Não podemos fazer outra coisa, relacionada a açar um bolo enquanto o forno está açando o bolo, porque não temos o bolo: o forno tem. Na mesma linha de raciocínio, apenas uma função pode estar em execução por vez.
+Quando uma função é finalizada, a execução da mesma retorna para a função que foi chamada, assim como retirarmos o bolo do forno. Ela retorna, juntamente com a execução tudo o que for especificado, usando uma instrução de retorno em desenvolvimento (return). que será discutida em breve.
+Segue um código de exemplo:
+
+int somar(const int a, const int b) {
+    return a + b;
+}
+
+Esse código é uma abstração desnecessária sobre algo que já é simples como fazer uma soma. No entanto esse exemplo mostra o que uma função deve fazer. Essa função recebe dados, e nos gera outros dados.
+A forma como escrevemos funções é um pouco estranha, e este exemplo está cheio de novos conseitos, então vamos analizar o código da função parte por parte.
+
+int somar(
+Essa parte representa o começo da declaração de nossa função, temos o tipo da função (int) inteiro significando que essa função retornará inteiros, o nome (somar) e a abertura dos parênteses.
+const
+O tipo const vai passar a certesa ao compilador de que nossas variáveis não vão ser reatribuídas.
+int
+O tipo de nossa primeira variável.
+a,
+O nome de nossa variável, seguido de vírgula identificando que estamos passando mais de um argumento para nossa função.
+const int b)
+A declaração de nossa segunda variável, seguido do fechamento de parênteses indicando que não há mais variáveis ou argumentos em nossa função.
+{
+O começo da nossa função, indicando que estamos abrindo um bloco para colocar tudo o que irá nela. Sempre se lembre de colocar cinal de chaves quando estiver fazendo uma função, mesmo que a mesma tenha só uma linha de código.
+    return a + b;
+Essa é a nossa única linha em nossa função, e retorna uma expreção avaliada como uma variável int. Ele faz a soma das variáveis a e b.
+}
+O fim de nossa função, indicando ao compilador que estamos de volta ao escopo externo (provavelmente global.)

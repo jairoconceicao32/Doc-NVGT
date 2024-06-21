@@ -1,0 +1,23 @@
+#Construindo NVGT em linux.
+
+##Construindo com o script "build_linux.sh".
+Existe um script para construir o mecanismo NVGT no linux:
+https://github.com/samtupy/nvgt/blob/main/build/build_linux.sh
+Esse script foi testado no debian e no ubunto, o script tem de a ser construido de modo a ser bastante portátil, para que possamos instalar basicamente em qualquer lugar, e tentará baixar com êxito todas as dependências possíveis. O resultado será o NVGT totalmente construido.
+Internamente, esse script é usado em nossas ações do GitHub para fazer compilações de nvgt. Ele também é utilisado em nossos ambientes de testes locais.
+Esse script atualmente só será executado em sistemas a onde o apt estiver instalado. Esse script não suporta nenhum outro gerenciador de pacotes.
+O script pode ser executado em dois modos:
+*Adicionar "ci" como parâmetro faz com que as dependências sejam baixadas no diretório de trabalho atual dentro de uma pasta "deps" muito útil se você ja estiver trabalhando com NVGT.
+*Se não ouvér "ci", o script vai entender que o mecanismo NVGT não foi baixado, e fará o clone do mesmo antes de fazer a construção.
+
+##Exemplo de execução do script usando o parâmetro "ci".
+Sabemos que teremos um NVGT que foi clonado rescentemente, de forma que nosso diretório de trabalho será "nvgt".
+
+Segue o exemplo da execução:
+chmod +x build/build_linux.sh
+./build/build_linux.sh ci
+
+Na sequência, ele fará o download de todos os pacotes e dependências necessárias e fará a construção do mecanismo no sistema. Isso pode demorar algum tempo.
+
+##Exemplo de execução do script sem o parâmetro "ci".
+Precisamos nos certificar em um diretório de trabalho onde será executado o script

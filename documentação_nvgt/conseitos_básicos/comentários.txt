@@ -1,0 +1,24 @@
+##Comentários.
+As vezes, você pode desejar documentar um código  complexo, ou talvez aplicar melhorias nele mais tarde.
+Por esses e outros motivos, as linguagens de programação geralmente  fornecem  maneiras de manter algumas anotações (comentários) em seu código que não serão executadas.
+Geralmente são chamados de comentários, e o NVGT possui três tipos deles:
+O comentário de uma única linha é escrito com dois cinais de barra, e tem asseguinte forma de escrever:
+//Holá!
+O comentário de várias linhas é escrito de um modo diferente, delimitado por um cinal de barra e asterísco, e um cinal de asterísco e barra. Se escreve assim.
+/*
+Olá!
+Sou um comentário de várias linhas.
+Mais uma linha de comentário.
+Uma pessoa sente dor.
+*/
+Por último temos o comentário de fim de linha, é como um comentário de uma única linha, mais segue uma linha de código. Exemplo:
+int preco_da_bebida=5; // Isso deveria ser capaz de armazenar valores fracionários?
+Além de documentarem seu código, comentários (Especialmente de várias linhas) podem ser usados para isolar código que temporariamente não precisa ser executado, ou que por algum motivo não está funcionando.
+Isso é chamado de código "ignorado" o código comentado será ignorado pelo compilador, assim como os comentários de textos. Exemplo:
+
+void main() {
+//alert("Olá!", "Olá mundo!")
+alert("Como vai você?", "Meu nome é NVGT!");
+}
+
+Ao executar este código, verá apenas a caixa de diálogo "Como vai você?", e não a caixa de diálogo "olá". Verifique, foi cometido um pequeno erro no código, na linha do olá, você consegue identificar o porque de termos comentado isso?

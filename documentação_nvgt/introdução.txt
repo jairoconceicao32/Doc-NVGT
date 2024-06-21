@@ -1,0 +1,51 @@
+**Traduzido por Jairo Conceição.
+##Programação de jogos com NVGT.
+##O que é desenvolvimento de jogos?
+Se você é um programador com experiência, e deseja aprender NVGT o mais rápido possível, pode pular essa ceção com segurança.
+Para quem nunca chegou a programar, o desenvolvimento de jogos pode parecer uma tarefa complicada, este manual espera poder ajudar na curva de aprendizado da programação e prepará-lo para você poder desenvolver e criar os jogos dos seus sonhos.
+A muitas coisas que precisam ser consideradas cuidadosamente no desenvolvimento de jogos, uma das mais curiosas e não menos importante é a programação; Muito rapidamente a programação deixa de se alinhar com os conseitos do mundo real. As instruções precisam ser lógicas, e suas regras de sintax ríjidas costumam ser a ruína de um novo programador.
+A medida que você aprende, você começará a "escrever e falar a programação de forma intuitiva". Você perceberá que as linguagens de programação nada mais são do que uma abstração legível sobre paradigmas comuns: variáveis, funcionalidades, condicionais, repetições, extruturas de dados e muito mais. Comece a pensar na programação, como uma nova maneira de pensar, e construir novas ideias, em vez de pensar de uma maneira de expreçar ideias e pensamentos já imajinados.
+E se você ainda não compreendeu esses paradigmas, não se preocupe lendo este tutorial, minha esperansa é que você aprenda a fazer jogos com NVGT, mais tenho um objetivo secundário: ao final deste texto, que você possa aprender a programação em geral.
+Especialmente no mundo dos áudio-games, cujo os desenvolvedores são equipes menores, no máximo a abilidade em designer de jogos, está relacionada com a abilidade em programação; Este tutorial tentará ensinar há ambos. Entre tanto, o próprio designer de jogos pode se tornar uma carreira!
+Ao desenvolver jogos, você deve primeiro considerar como seu jogo vai ser: Quais são as regras do jogo? Qual é a tradição, se tem uma história? Planeje seu projeto detalhadamente, para que fique mais fácil de transformá-lo em código depois. Isso é especialmente para projetos que tem uma história.
+Além de codar e planejar o jogo, os sons também devem ser encontrados ou criados,; Muitos recursos de ótima qualidade, podem ser encontrados para essa finalidade, sejam eles gratuitos ou pagos.
+Também ocorre que um jogo lançado, não é necessariamente concluído: jogos multe-jogador precisam de administração para mantê-los funcionando, e os jogos precisam de atualização e manutenção para corrigir bugs que você não os encontrou após o lançamento.
+
+
+##Seu primeiro script em NVGT.
+Um script também pode ser considerado, uma "unidade de código". Você provavelmente já viu muitos deles: .py, .js, .vbs, talvez .bgt e agora .nvgt. Um script pode ser executado, significa que todo o código contido nele será executado pelo NVGT.
+Normalmente, um jogo consistirá não apenas de um script, mais sim de vários scripts, cada um dos quais terá uma funcionalidade ou propósito específico. Porém, um único script será suficiente para nossas necessidades.
+Algo bastante comun entre os programadores, é escrever um programa que exiba na tela Olá! Mundo! Para garantir que a linguagem usada esteja funcionando.
+Vamos fazer isso agora, e dizer olá mundo usando o NVGT!
+Abra um arquivo em um editor de texto de sua preferência, (Recomendável o notepad++)  e cole o seguinte código nele:
+
+void main() {
+	alert("Olá!", "Olá mundo!");
+}
+
+Agora salve este arquivo como olá.nvgt, e o procure em seu explorador de arquivos.
+Precione enter, e você verá uma caixa de diálogo com nossa mensagem dentro!
+Parabéns! Você acabou de escrever seu primeiro script NVGT!
+Este script pode parecer simples, mas na verdade há muita coisa acontecendo aqui. Vamos analisá-lo linha a linha:
+
+void main() { Essa é nossa função principal, (mais sobre isso depois), que não retorna nada, que não recebe argumentos ou parâmetros.
+
+O abre chaves depois abre um escopo de código (bloco de código). É comum em muitas bases de código colocar o abre chaves, na linha que abre o bloco, e colocar em uma nova linha o fecha chaves, após o término do bloco.
+Dentro do nosso bloco, temos uma linha, alert("Olá!", "Olá mundo!");
+Vamos entendê-la passo a passo.
+alert() É uma função no nvgt, que abre uma caixa de diálogo, contendo uma mensagem. Suporta muitos argumentos, mas a maioria é opcional, aqui usamos os dois que não são: Um título e um texto.
+Separamos nossos parâmetros por vírgula e espaço, semelhante ao que fazemos ao listar itens em inglês.
+A uma regra a ser lembrada: uma vírgula após cada item, excéto o último item.
+Nossos parâmetros estão entre parênteses (), mas por quê? Isso informa ao NVGT, o que gostaríamos de fazer com a função alert, gostaríamos de chamar (significa executar o código, dentro dela, com base em alguns valores). Finalmente terminamos a linha, com ponto-vírgula (;) que informa ao nvgt que concluímos o código.
+Juntos, alert("Olá!", "olá mundo!"); é conhecido como uma instrução, a menor unidade de código que pode ser executada.
+Como você pode ver, as funcionalidades, não são tão assustadoras!
+No entanto, falta uma peça nesse quebra-cabeças: qual o problema com a função main?
+Na verdade, é arbitrário, embora extremamente comum. Muitas linguagens de programação (rust, c, c++, java e NVGT, para citar algumas) exigem que você use a função main() como o que é chamado de "função principal": em outras palavras, o NVGT chamará a função principal, apenas como chamamos de função de alerta. Se não encontrar a função principal, não saberá por onde começar e simplesmente apresentará um erro informando isso.
+É muito possível escrever scripts, sem uma função principal. As vezes eles são chamados de módulos, e as vezes incluem scripts, ou scripts auxiliares ou qualquer outro nome. No NVGT, como módulo é um conseito bem diferente (e avançado), nós os chamamos de scripts de inclusão (include).
+Há algo interessante que o NVGT ffornece, você não apenas pode executá-lo, mas também impacotá-lo, em um arquivo executável, pronto para ser compartilhado com quem você desejar. A vantagem é que o arquivo executável protejerá seu código de mal feitores, o que é bastante útil para jogos multe-jogadores!
+Não apenas isso, mas qualquer pessoa pode rodar seu jogo se você compilá-lo, independentemente de ter ou não o nvgt instalado em seus computadores.
+É simples de fazer: depois de celecionar o script no windows explorer, não o execute. Em vez disso, utilize a tecla aplicação, ou alternativamente shift mais f10 se você não tiver a tecla aplicação.
+A opção Compile Script  subMenu: ceta direita, e deça até a opção (Release) que significa lançamento.
+Clique nele e um novo arquivo deverá aparecer próximo ao script: olá.exe.
+Ao executar este script, você vai obter um efeito semelhante, de apenas executar o script, só que agora seu script está protejido.
+Agora que aprendemos o básico dos scripts nvgt, vamos seguir em frente e criar um programa simples!

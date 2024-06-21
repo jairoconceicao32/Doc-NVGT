@@ -1,0 +1,2 @@
+# API Referências de API
+Essa guia contém diversas referências completas de classes, APIS  e funções, que permitem o desenvolvimento de jogos e outras aplicações. Para Ver exemplos de como qualquer um desses objetos funciona em conjunto com mais detalhes, é recomendável que se consulte o manual de usuário do NVGT ao em véz das referências. Porém, se desejamos buscar alguma função específica ou navegar pela lista completa que o mecanismo pode nos oferecer, estamos no lugar certo!

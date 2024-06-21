@@ -1,0 +1,18 @@
+##Atualizando um projeto BGT para NVGT.
+Como por algum tempo, a maioria das pessoas que já ouviram falar de NVGT, provavelmente vão começar, será descrita a relação de NVGT com BGT, e não menos importante, as etapas para atualizar um projeto de BGT para NVGT.
+Se caso não oviu falar de bgt, ou é completamente novo em desenvolvimento, é recomendável que veja os conceitos básicos presentes nessa documentação.
+BGT significa Blastbay Gaming Toolkit, (motor para desenvolvimento de áudio games), foi o que inicialmente inspirou a criação deste mecanismo, depois que o motor BGT foi descontinuado.
+É importante salientar que o mecanismo NVGT, não é oficialmente desenvolvido pelos desenvolvedores e colaboradores do BGT, e o NVGT não é de forma alguma derivado do código-fonte do BGT. Os únicos scripts compartilhados entre NVGT e BGT são alguns dos arquivos do mecanismo, como o audio_form e o sound_pool, usados em muitos jogos em BGT, que estão sob a licensa zlib.
+O nosso objetivo é tornar a tranzição o mais simples possível de BGT para NVGT, mas aqui estão algumas coisas que devemos saber, ao portar um jogo de um mecanismo para o outro.
+
+*Sempre inclua bgt_compat.nvgt (#include "bgt_compat.nvgt"), pois isso inclui muitas coisas de outras funções. O uso de funções integradas, pode ajudar no desempenho, por tanto, isso é mais ou menos uma solução temporária para começarmos a trabalhar rapidamente. No entanto, se você deseja executar seu código, certamente bgt_compat será uma boa alternativa.
+*Ao chamar o tamanho de um arrai, passe o tamanho como uma chamada de método, e não como uma propriedade; Exemplificando, usaríamo:s arrai.length(); Ao em véz de arrai.length;
+*O métudo sound::stream(), existe em NVGT, mas é simplesmente uma ajuda para sound::load(). Por esse motivo, é recomendável que se altere todas as chamadas de stream() para load().
+*load() possui um segundo argumento opcional para passar um arquivo. Atenção: set_sound_storage() não é mais usado no momento. No entanto, podemos definir sound_pool.pack_file como um identificador de pacote para ter o mesmo resultado.
+*A sintaxe de Angelscript para nomear argumentos em chamadas de função foi mudada. func(arg, arg, arg=value); agora deve ser func(arg, arg, arg:value);
+*Atenção, ao verificar quais quer chamada de função utilisando o objeto tts_voice, pois alguns métudos como set_voice foram mudados em relação ao seus equivalentes em BGT.
+*Ao quebrar uma string, é recomendável combinar com \r\n pois o BGT trabalha com isso de forma diferente. Isso resultará em não haver quebras de linha falças ao final de um texto.
+*O objeto de configurações foi criado como um objeto fantasma. Ou seja, ele não gravará ou carregará nenhum dado do rejistro. Se formos utilizar o rejistro, é recomendável utilisar um arquivo para armazenar dados, ou um arquivo de configuração (ini).
+*O objeto de controles (joystick) também é um objeto fantasma, e não funciona atualmente.
+*O objeto de calendário foi renomeado para datetime.
+*No mecanismo, existe um tipo chamado var, então precisaremos ter cuidado se nossos projetos conter alguma variável chamada var.

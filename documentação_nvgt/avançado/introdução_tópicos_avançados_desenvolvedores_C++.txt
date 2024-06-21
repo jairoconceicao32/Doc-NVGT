@@ -1,0 +1,2 @@
+#Tópicos avançados para desenvolvedores C++.
+Essa guia contém informações úteis para quem deseja interajir de algum modo com o código-fonte do mecanismo NVGT. Se alguém deseja realizar a construção simples de código-fonte, desenvolver algum plugin para o mecanismo, aprender como fazer contribuições para o mecanismo ou apenas aprender como o NVGT funciona internamente, essas informações serão encontradas nessa guia. Os tópicos aqui abordados vão muito além do desenvolvimento de jogos usando o mecanismo NVGT utilisando o instalador baixado de nvgt.gg.

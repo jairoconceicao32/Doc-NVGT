@@ -1,2 +1,2 @@
 # Doc-NVGT
-# Traduzindo a documentação do mecanismo nvgt.
+Tradução da documentação do mecanismo de desenvolvimento de jogos NVGT.

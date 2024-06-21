@@ -1,0 +1,24 @@
+##Incluindo scripts.
+A importância sobre o desenvolvimento, como qualquer coisa, é que a organização é a coisa mais importante. Sempre se lembre disto: ler código é mais difícil do que escrever.
+Como desenvolvedor, sua tarefa de maior prioridade é fazer o código funcionar. Mas sem dúvida, tão importante é manter seu código organizado.
+Imagine que você é uma verção de você mesmo, com experiência de desenvolvimento parecida. No entanto, você nunca leu o código do seu projeto antes. Se você conseguir compreender intuitivamente o que todos os seus componentes fazem, então você conseguiu escrever um código legível!
+Outra coisa que os desenvolvedores gostam, é a modularização, essa filozofia determina que seu código dependa de outro código.
+Será abordado isso mais tarde, mais um script de inclusão é como se consegue fazer modularização em NVGT: usando a palavra #include no tôpo  de seu programa, é possível carregar outro arquivo de código, adicionando seu outro código ao fazer isso.
+O NVGT vem com uma cérie de scripts de inclusão ou simplesmente (include), que você pode usar gratuitamente par acelerar o processo de desenvolvimento de seu jogo.
+Por exemplo, a inclusão de speech.nvgt possui funcionalidades para fazer com que seu jogo fale texto, sem a necessidade de se preocupar com qual leitor de telas ou voz sapi o usuário tem.
+Se você quiser usar o include speech.nvgt, você o colocaria em seu script assim:
+
+#include "speech.nvgt"
+
+Por quê o #? No NVGT, # é chamado de direcionamento de pré-processador: geralmente uma linha de código, que é usada antes de seu programa ser executado para mudar algo nele.
+NVGT possui o que chamamos de caminho de inclusão. Ele busca em várias pastas, seus scripts de inclusão, se não conseguir encontrar, é exibido um erro. Funciona da seguinte maneira:
+1. Procure a pasta do script o qual o outro foi incluído.
+2. Procure a pasta de include em NVGT, na qual todas as inclusões integradas estão armazenadas.
+[Adicione mais tarde aqui.]
+Segue um exemplo de código completo, que você pode copiar e executar com NVGT.
+
+#include "speech.nvgt"
+void main() {
+    speak('holá!');
+}
+
