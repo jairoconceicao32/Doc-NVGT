@@ -1,4 +1,5 @@
 **Traduzido por Jairo Conceição.
+**Contribuições de Ígor Palmeira.
 ##Programação de jogos com NVGT.
 ##O que é desenvolvimento de jogos?
 Se você é um programador com experiência, e deseja aprender NVGT o mais rápido possível, pode pular essa ceção com segurança.
