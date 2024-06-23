@@ -1,0 +1,10 @@
+# directory_delete
+Deleta um diretório.
+
+`bool directory_delete(string directory);`
+
+## Parâmetros:
+* string directory: O diretório a ser deletado.
+
+## Retorno:
+bool: Verdadeiro se o diretório foi deletado com sucesso; Caso contrário, falço.

@@ -1,0 +1,10 @@
+# file_delete
+Deleta um arquivo.
+
+`bool file_delete(string filename);`
+
+## Parâmetros:
+* string filename: O nome do arquivo a ser deletado.
+
+## Retorno:
+bool: Verdadeiro se o arquivo foi deletado com sucesso; Caso contrário falço.

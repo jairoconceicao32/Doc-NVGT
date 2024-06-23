@@ -1,0 +1,15 @@
+/**
+	Verifica se um diretório existe ou não.
+	bool directory_exists(string directory);
+
+	## Parâmetros:
+		* string directory: O diretório o qual sua existência será verificada (Pode ser um caminho relativo ou absoluto).
+
+	## Retornos:
+		Verdadeiro se o diretório existir; Caso contrário, falço.
+*/
+
+// Exemplo:
+void main() {
+	alert("O diretório existe", directory_exists("test") ? "Existe um diretório chamado teste na pasta atual." : "Não existe um diretório de teste na pasta atual.");
+}

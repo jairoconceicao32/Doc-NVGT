@@ -1,0 +1,15 @@
+/**
+	Obtém o tamanho de um arquivo em bits.
+	int64 file_get_size(string filename);
+
+	## Parâmetros:
+		* string filename: O nome/ caminho do arquivo o qual o tamanho será obtido.
+
+	## Retorno:
+		int64: O tamanho do arquivo em bits.
+*/
+
+// Exemplo:
+void main() {
+	alert("file_get.size.nvgt is", file_get_size("file_get_size.nvgt") + " bytes");
+}

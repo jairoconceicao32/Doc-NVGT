@@ -1,0 +1,10 @@
+# file_exists
+Verifica a existência de um arquivo específico.
+
+`bool file_exists(string file_path);`
+
+## Parâmetros:
+* string file_path: O caminho do arquivo a ser verificado.
+
+## Retorno:
+bool: Verdadeiro se o arquivo existir; Caso contrário falço.

@@ -1,0 +1,24 @@
+/**
+	Cria um diretório se ainda não existir.
+	bool directory_create(string directory);
+
+	## Parâmetros:
+		* string directory: O caminho do diretório a ser criado (pode ser aninhado, relativo ou absoluto).
+
+	## Retorno:
+	Em caso verdadeiro se o diretório foi criado com sucesso ou já existe; Ou caso contrário, falço.
+*/
+
+// Exemplo:
+void main() {
+	if (directory_exists("test")) {
+		alert("Informação", "O diretório teste já existe; Nada para se fazer.");
+		exit();
+	}
+	if (directory_create("test")) {
+		alert("Informação", "O diretório foi criado... Deletando...");
+		alert("Informação", directory_delete("test") ? "Sucesso": "Falhou");
+	}
+	else
+		alert("Erro", "Não foi possível criar o diretório");
+}

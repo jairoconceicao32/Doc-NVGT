@@ -1,0 +1,19 @@
+/**	.
+	Obtém um objeto datetime que representa a data de criação de um arquivo.
+	datetime file_get_date_created(string filename);
+
+	## Parâmetros:
+		* string filename: O nome do arquivo a ser verificado.
+
+	## Retorno:
+		datetime: Um objeto datetime inicializado, com todos os campos preenchidos para a data de criação do arquivo.
+
+	## Algumas observações:
+		A data será retornada em UTC, e não no fuso horário local.
+*/
+
+// Exemplo:
+void main() {
+	datetime dt = file_get_date_created("file_get_date_created.nvgt");
+	alert("file_get_date_created.nvgt was created on", dt.year + "-" + dt.month + "-" + dt.day + ", " + dt.hour +":" + dt.minute + ":" + dt.second);
+}

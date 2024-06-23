@@ -1,0 +1,16 @@
+/**	
+	Essa propriedade armazena os dados da aplicação na pasta roaming, que é comumente a onde os dados serão escritos.
+	const string DIRECTORY_APPDATA;
+	## Algumas observações::
+		O caractér de barra já está anexado ao diretório retornado por essa propriedade.
+		Essa função pode devolver valores diferentes dependendo do sistema operacional em que a aplicação está sendo executada.
+			* No sistema Windows, é usado: C:\Users\%username%\appdata\roaming/.
+			* No sistema macOS, é usado: ~/Library/Preferences/.
+			* No sistema Linux, é usado ~/.config/.
+		De qualquer forma, o diretório retornado deve ser armazenado.
+*/
+
+// Exemplo:
+void main() {
+	alert("exemplo", "os dados  podem ser armazenados em" + DIRECTORY_APPDATA + "meu_jogo/");
+}

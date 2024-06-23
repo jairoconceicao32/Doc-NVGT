@@ -1,0 +1,19 @@
+/**
+	Obtém um objeto datetime que representa a data de modificação de um arquivo específico.
+	datetime file_get_date_modified(string filename);
+
+	## Parâmetros:
+		* string filename: O nome do arquivo a ser verificado.
+
+	## Retorno:
+		datetime: Um objeto datetime inicializado, com todos os seus campos preenchidos para a data de modificação do arquivo.
+
+	## Algumas observações:
+		A data será retornada em UTC, e não no fuso horário local.
+*/
+
+// Exemplo:
+void main() {
+	datetime dt = file_get_date_modified("file_get_date_modified.nvgt");
+	alert("file_get_date_modified.nvgt was modified on", dt.year + "-" + dt.month + "-" + dt.day + ", " + dt.hour +":" + dt.minute + ":" + dt.second);
+}
