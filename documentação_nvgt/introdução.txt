@@ -12,7 +12,6 @@ Ao desenvolver jogos, você deve primeiro considerar como seu jogo vai ser: Quai
 Além de codar e planejar o jogo, os sons também devem ser encontrados ou criados,; Muitos recursos de ótima qualidade, podem ser encontrados para essa finalidade, sejam eles gratuitos ou pagos.
 Também ocorre que um jogo lançado, não é necessariamente concluído: jogos multe-jogador precisam de administração para mantê-los funcionando, e os jogos precisam de atualização e manutenção para corrigir bugs que você não os encontrou após o lançamento.
 
-
 ##Seu primeiro script em NVGT.
 Um script também pode ser considerado, uma "unidade de código". Você provavelmente já viu muitos deles: .py, .js, .vbs, talvez .bgt e agora .nvgt. Um script pode ser executado, significa que todo o código contido nele será executado pelo NVGT.
 Normalmente, um jogo consistirá não apenas de um script, mais sim de vários scripts, cada um dos quais terá uma funcionalidade ou propósito específico. Porém, um único script será suficiente para nossas necessidades.
