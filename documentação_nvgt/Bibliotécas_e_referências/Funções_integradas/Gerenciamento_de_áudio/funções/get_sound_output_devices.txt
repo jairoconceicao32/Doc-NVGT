@@ -1,10 +1,12 @@
 /**
-	Return an array of strings listing all output sound devices on the system.
+	Retorna um array de strings listando todos os dispositivos de saída disponíveis no sistema.
 	string[]@ get_sound_output_devices();
-	## Returns:
-		string[]@: A handle to an array listing all available output devices.
-	## Remarks:
-		After listing devices with this function, you can set the sound_output_device global engine property to whatever index in the returned array contains the name of the device you want to set.
+
+	## Retorno:
+		string[]@: Um identificador para um array que lista todos os dispositivos de saída disponíveis.
+
+	## Algumas observações:
+		Depois de listar os dispositivos com essa função, podemos definir a propriedade global do mecanismo sound_output_device para qualquer índice do array retornado que contenha o nome do dispositivo que desejamos definir.
 		This list will always include a no sound device. If you don't want the user to be able to select it, feel free to not allow them to move their cursor to that item or not add it to your menus etc, but remember to pay attention to the index difference this may create when setting the sound_output_device property, namely just remember that setting sound_output_device = 0 will set the system to no sound, and setting the device to 1 will always be the first real device in the system, or the default device at least on windows.
 */
 
